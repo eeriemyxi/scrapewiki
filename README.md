@@ -14,7 +14,7 @@ Asynchronous:
 
 ```python
 import scrapewiki
-import asyncio
+import trio
 
 
 wiki = scrapewiki.Scrapewiki()
@@ -30,11 +30,11 @@ async def main():
     searcher = wiki.search("python")
     results = await searcher.async_method()
 
-asyncio.run(main)
+trio.run(main)
 ```
 ```python
 import scrapewiki
-import asyncio
+import trio
 
 
 wiki = scrapewiki.Scrapewiki()
@@ -46,10 +46,10 @@ async def main():
 
     # equivalent of
 
-    searcher = wiki.wiki("python")
-    page = await searcher.async_method()
+    page_scraper = wiki.wiki("python")
+    page = await page_scraper.async_method()
 
-asyncio.run(main)
+trio.run(main)
 ```
 Synchronous:
 
