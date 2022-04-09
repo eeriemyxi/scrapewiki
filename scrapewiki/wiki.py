@@ -8,9 +8,10 @@ import trio
 from selectolax.parser import HTMLParser, Node
 
 import scrapewiki
-from scrapewiki.abc.coroutine_handler import CoroutineHandler
-from scrapewiki.constants import NOT_FOUND_TEXT
-from scrapewiki.structures import (
+
+from .abc.coroutine_handler import CoroutineHandler
+from .constants import NOT_FOUND_TEXT
+from .structures import (
     Category,
     Content,
     ExternalLink,

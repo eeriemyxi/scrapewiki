@@ -7,8 +7,8 @@ import trio
 from selectolax.parser import HTMLParser, Node
 
 import scrapewiki
-from scrapewiki.abc.coroutine_handler import CoroutineHandler
-from scrapewiki.structures import BytesConvertUnits, SearchResult
+from .abc.coroutine_handler import CoroutineHandler
+from .structures import BytesConvertUnits, SearchResult
 
 __all__ = ["Searcher", "SearchParser"]
 
