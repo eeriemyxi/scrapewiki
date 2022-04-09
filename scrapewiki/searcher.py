@@ -7,15 +7,16 @@ import trio
 from selectolax.parser import HTMLParser, Node
 
 import scrapewiki
-
-from .abc.coroutine_handler import CoroutineHandler
-from .structures import BytesConvertUnits, SearchResult
+from scrapewiki.abc.coroutine_handler import CoroutineHandler
+from scrapewiki.structures import BytesConvertUnits, SearchResult
 
 __all__ = ["Searcher", "SearchParser"]
 
 
 class Searcher(CoroutineHandler):
-    def __init__(self, scrapewiki: scrapewiki.Scrapewiki, query: str, limit: int, **kwargs):
+    def __init__(
+        self, scrapewiki: scrapewiki.Scrapewiki, query: str, limit: int, **kwargs
+    ):
         super().__init__(query, **kwargs)
         self.scrapewiki = scrapewiki
         self.query = query

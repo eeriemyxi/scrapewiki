@@ -1,6 +1,6 @@
-from . import structures, util, constants
+from . import constants, structures, util
 from .core import *
+from .errors import *
 from .http import *
 from .searcher import *
 from .wiki import *
-from .errors import *

@@ -9,7 +9,9 @@ class Scrapewiki:
     def __init__(self):
         self.http = scrapewiki.HTTP()
 
-    def search(self, query: str, limit: int = 20, **kwargs) -> scrapewiki.searcher.Searcher:
+    def search(
+        self, query: str, limit: int = 20, **kwargs
+    ) -> scrapewiki.searcher.Searcher:
         return scrapewiki.Searcher(self, query, limit, **kwargs)
 
     def wiki(self, page_name: str, **kwargs) -> scrapewiki.Wiki:

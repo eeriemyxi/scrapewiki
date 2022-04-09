@@ -10,6 +10,7 @@ class PageNotFound(Exception):
     title: str
         The title of the page that was not found.
     """
+
     def __init__(self, title):
         super().__init__()
         self.title = title
@@ -27,6 +28,7 @@ class QueryNotMatched(Exception):
     query: str
         The query that was not matched.
     """
+
     def __init__(self, query):
         super().__init__()
         self.query = query

@@ -64,7 +64,10 @@ async def main():
         async for page in result:
             print(f"ITEM NUMBER: {index}")
 
-            for name, value in scrapewiki.structures.BytesConvertUnits._member_map_.items():
+            for (
+                name,
+                value,
+            ) in scrapewiki.structures.BytesConvertUnits._member_map_.items():
                 print(f"CONVERTING BYTES TO {name}")
                 print(scrapewiki.util.convert_bytes_to(value, page.size))
 

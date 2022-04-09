@@ -10,7 +10,6 @@ __all__ = [
     "Category",
     "ExternalLink",
     "Note",
-    "CiteNote",
     "Paragraph",
     "Header",
     "Content",
@@ -31,7 +30,7 @@ class SearchResult:
     `snippet`: `str`
          The short description of the search result.
     `url`: `str`
-        The url of the page.
+        The URL of the page.
     `size`: `int`
         The size of the page in bytes unit.
     `word_count`: `int``
@@ -58,7 +57,7 @@ class Reference:
     `name`: `str`
         The name of the reference.
     `url`: `str`
-        The url of the reference.
+        The URL of the reference.
     """
 
     name: str
@@ -92,7 +91,7 @@ class Category:
     `name`: `str`
         The name of the category.
     `url`: `str`
-        The url of the category.
+        The URL of the category.
     """
 
     name: str
@@ -109,7 +108,7 @@ class ExternalLink:
     `name`: `str`
         The name of the external link.
     `url`: `str`
-        The url of the external link.
+        The URL of the external link.
     """
 
     name: str
@@ -185,15 +184,20 @@ class Header:
         The level of the header.
     `notes`: `list[Note]`
         The notes of the header.
+    `paragraphs`: `list[Paragraph]`
+        The paragraphs of the header.
     `references`: `list[Reference]`
-        The references of the header."""
+        The references of the header.
+    `lists`: `list[HeaderListItem]`
+        The list items of the header.
+    """
 
     text: str
     level: int
     notes: list[Note]
     paragraphs: list[Paragraph] | None
     references: list[Reference] | None
-    lists: list[Reference] | None
+    lists: list[HeaderListItem] | None
 
     def __repr__(self):
         return f"<Header level={self.level} text={self.text}, paragraphs={self.paragraphs}>"
@@ -209,7 +213,7 @@ class Content:
     `name`: `str`
         The name of the content.
     `url`: `str`
-        The url of the content.
+        The URL of the content.
     `sub_contents`: `list[Content]`
         The sub contents of the content.
     """
@@ -232,7 +236,7 @@ class HeaderListItem:
     `text`: `str`
         The text of the list item.
     `url`: `str`
-        The url of the first a tag if found.
+        The URL of the first a tag if found.
     `sub_lists`: `list[HeaderListItem]`
         The sub lists of the list item.
     """
@@ -257,7 +261,9 @@ class Page:
     `title`: `str`
         The title of the page.
     `url`: `str`
-        The url of the page.
+        The URL of the page.
+    `last_modified`: `datetime.datetime`
+        The last modified date of the page.
     `headers`: `list[Header]`
         The headers of the page.
     `contents`: `list[Content]`
