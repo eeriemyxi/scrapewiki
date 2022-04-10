@@ -7,6 +7,7 @@ import trio
 from selectolax.parser import HTMLParser, Node
 
 import scrapewiki
+
 from .abc.coroutine_handler import CoroutineHandler
 from .structures import BytesConvertUnits, SearchResult
 

@@ -1,9 +1,11 @@
+from typing import Union
+
 from ..structures import BytesConvertUnits
 
 __all__ = ["convert_bytes_to"]
 
 
-def convert_bytes_to(unit: BytesConvertUnits | int, bytes: int) -> int:
+def convert_bytes_to(unit: Union[BytesConvertUnits, int], bytes: int) -> int:
     """Convert bytes to other units."""
     if isinstance(unit, int):
         return bytes // unit

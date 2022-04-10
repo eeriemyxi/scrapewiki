@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import datetime
 from dataclasses import dataclass
+from typing import Union
 
 __all__ = [
     "SearchResult",
@@ -195,9 +196,9 @@ class Header:
     text: str
     level: int
     notes: list[Note]
-    paragraphs: list[Paragraph] | None
-    references: list[Reference] | None
-    lists: list[HeaderListItem] | None
+    paragraphs: Union[list[Paragraph], None]
+    references: Union[list[Reference], None]
+    lists: Union[list[HeaderListItem], None]
 
     def __repr__(self):
         return f"<Header level={self.level} text={self.text}, paragraphs={self.paragraphs}>"
@@ -220,7 +221,7 @@ class Content:
 
     name: str
     url: str
-    sub_contents: list[Content] | None
+    sub_contents: Union[list[Content], None]
 
     def __repr__(self) -> str:
         return f"<Content: {self.name}>"
@@ -243,7 +244,7 @@ class HeaderListItem:
 
     name: str
     url: str
-    sub_lists: list[HeaderListItem] | None
+    sub_lists: Union[list[HeaderListItem], None]
 
     def __repr__(self) -> str:
         return f"<HeaderListItem: {self.name}>"
