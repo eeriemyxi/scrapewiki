@@ -1,7 +1,7 @@
 # Scrapewiki - Wikipedia Scraper
 
 It can scrape [Wikipedia](http://wikipedia.org) synchronously and asynchronously.
-[`scrapewiki.Scrapewiki`](https://github.com/m-y-x-i/scrapewiki/blob/bb918efd28bafcb4b7bd9eec7796f634ecd272bb/scrapewiki/core.py#L8-L16) has two methods, `search` and `wiki`.
+[`scrapewiki.Scrapewiki`](https://github.com/m-y-x-i/scrapewiki/blob/master/scrapewiki/core.py#L8-L16) has two methods, `search` and `wiki`.
 
 ### `wiki`
 It is used to scrape a Wikipedia page.
@@ -87,7 +87,7 @@ page = page_scraper.sync_method()
 
 ### Extras
 The module also provides some utility functions for ease of use (currently just one):
-- [`scrapewiki.util.convert_bytes_to`](https://github.com/m-y-x-i/scrapewiki/blob/bb918efd28bafcb4b7bd9eec7796f634ecd272bb/scrapewiki/util/converters.py#L6-L13)
+- [`scrapewiki.util.convert_bytes_to`](https://github.com/m-y-x-i/scrapewiki/blob/master/scrapewiki/util/converters.py#L6-L13)
 
 #### Plans
 There are a lot of things that needs to be parsed.
